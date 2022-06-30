@@ -1,14 +1,16 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using WishList.Data;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using WishList.Models;
 
 namespace WishList.Controllers
 {
     public class ItemController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IdentityDbContext<ApplicationUser> _context;
 
-        public ItemController(ApplicationDbContext context)
+        public ItemController(IdentityDbContext<ApplicationUser> context)
         {
             _context = context;
         }
